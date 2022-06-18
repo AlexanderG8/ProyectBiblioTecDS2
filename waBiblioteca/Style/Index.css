@@ -1,0 +1,297 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300&display=swap');
+
+:root {
+    --backgorund_color: #F7F7F7;
+    --color_major: #394465;
+    --background_img: #CFD1D5;
+    --title: 'Kdam Thmor Pro', sans-serif;
+    --nav: 'Josefin Sans', sans-serif;
+    --title_gallery: 'Merriweather', serif;
+    --price: 'Raleway', sans-serif;
+    --button: 'Quicksand', sans-serif;
+    --caption: 'Heebo', sans-serif;
+}
+
+body {
+    margin: 40px 50px 0 50px;
+}
+
+/*Estilo para el encabezado*/
+.header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    align-items: center;
+}
+
+/*Estilo del titulo*/
+.title {
+    display: inline-block;
+    background-color: var(--color_major);
+    color: var(--backgorund_color);
+    padding: 5px;
+    font-family: var(--title);
+}
+
+.title__library {
+    background-color: var(--backgorund_color);
+    color: var(--color_major);
+    padding: 0 5px;
+    font-weight: lighter;
+}
+
+.header__nav, .links__list, .session__list {
+    display: flex;
+}
+
+.header__nav {
+    justify-content: flex-end;
+}
+
+.nav__links {
+    margin-right: 20px;
+}
+
+.list__item {
+    list-style-type: none;
+    margin: 0 10px;
+    font-family: var(--nav);
+}
+
+.items {
+    text-decoration: none;
+    color: var(--color_major);
+}
+
+/*Estilos para el banner*/
+.banner {
+    margin-top: 50px;
+}
+
+.banner__img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+}
+
+/*Estilos de los subtitulos*/
+.gallery_one__caption {
+    text-align: center;
+    margin-top: 50px;
+    font-family: var(--caption);
+    color: var(--color_major);
+}
+
+.gallery_one__title {
+    text-align: center;
+    margin-top: 10px;
+    font-family: var(--title_gallery);
+    color: var(--color_major);
+    font-size: 40px;
+    letter-spacing: 2px;
+}
+
+/*Estilos de la galeria*/
+.gallery__container {
+    background-color: var(--color_major);
+    margin-top: 250px;
+}
+
+.gallery_one__list {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    justify-items: center;
+}
+
+.list_one__item {
+    list-style-type: none;
+}
+
+.item_two {
+    margin-top: -130px;
+}
+
+.item_book {
+    width: 200px;
+    height: 250px;
+    background-color: var(--background_img);
+    padding: 15px 30px;
+}
+
+.gallery_one__line {
+    text-align: center;
+}
+
+.caption__white, .title__white, .gallery_one__line {
+    color: var(--backgorund_color);
+}
+
+.line__two {
+    margin-bottom: 50px;
+    margin-top: 28px;
+}
+
+/*Estilos al nombre del producto y al precio*/
+.item_nombre {
+    text-align: center;
+    color: var(--backgorund_color);
+    line-height: 25px;
+    font-family: var(--price);
+    font-size: 15px;
+}
+
+.foot__title {
+    text-align: center;
+    color: var(--backgorund_color);
+    font-size: 60px;
+}
+
+.foot__button {
+    background-color: var(--color_major);
+    color: var(--backgorund_color);
+    border: 2px solid var(--backgorund_color);
+    padding: 5px 10px;
+    margin: 20px 0;
+    transition: .2s;
+}
+
+    .foot__button:hover {
+        background-color: var(--backgorund_color);
+        color: var(--color_major);
+        cursor: pointer;
+    }
+
+.line__three {
+    margin: 0 30px;
+}
+
+.line__four {
+    padding-bottom: 60px;
+}
+
+.line__five {
+    margin-top: 30px;
+}
+
+.gallery__foot {
+    text-align: center;
+}
+
+/*Estilos para el aside*/
+.aside__container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    margin-top: 100px;
+    gap: 60px;
+}
+
+.aside__contact {
+    justify-self: end;
+}
+
+.aside__img {
+    justify-self: start;
+}
+
+.img {
+    background-color: var(--color_major);
+    padding: 15px;
+}
+
+.aside__contact {
+    line-height: 30px;
+}
+
+.aside__color {
+    color: var(--color_major);
+    font-family: var(--price);
+    font-weight: lighter;
+}
+
+.contact__title {
+    font-size: 21px;
+}
+
+.contact__caption, .contact__schedule, .contact__schedule__two {
+    font-size: 15px;
+}
+
+.contact__button {
+    color: var(--color_major);
+    padding: 10px 20px;
+    margin-top: 50px;
+    background-color: var(--backgorund_color);
+    border: 2px solid var(--color_major);
+}
+
+    .contact__button:hover {
+        color: #6a7597;
+        cursor: pointer;
+    }
+
+/*Estilos para el footer*/
+.footer {
+    background-color: var(--color_major);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
+    padding: 50px 200px;
+    margin-top: 100px;
+}
+
+.mister {
+    padding-bottom: 30px;
+}
+
+.list__item {
+    color: var(--backgorund_color);
+    line-height: 40px;
+    font-family: var(--button);
+    font-size: 15px;
+    transition: .3s;
+}
+
+    .list__item:hover {
+        color: #6a7597;
+        cursor: pointer;
+    }
+
+.item__email {
+    background-color: var(--color_major);
+    padding: 10px 20px;
+    color: var(--backgorund_color);
+}
+
+    .item__email::placeholder {
+        color: var(--backgorund_color);
+    }
+
+.item__button {
+    background-color: var(--backgorund_color);
+    color: var(--color_major);
+    width: 100%;
+    padding: 10px 0;
+    font-weight: bold;
+    font-family: var(--button);
+    transition: .5s;
+    margin-top: 15px;
+}
+
+    .item__button:hover {
+        background-color: var(--color_major);
+        color: var(--backgorund_color);
+        border: 1px solid var(--color_major);
+        cursor: pointer;
+    }
