@@ -1,0 +1,51 @@
+﻿@model IEnumerable<waBiblioteca.RUTA_LIBRO>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NOM_RUTA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NOM_ARCHI)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NOM_ARCHI_FISIC)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IDD_LIBRO)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NOM_RUTA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NOM_ARCHI)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NOM_ARCHI_FISIC)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IDD_LIBRO)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.IDD_RUTA_LIBRO }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IDD_RUTA_LIBRO }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.IDD_RUTA_LIBRO })
+        </td>
+    </tr>
+}
+
+</table>

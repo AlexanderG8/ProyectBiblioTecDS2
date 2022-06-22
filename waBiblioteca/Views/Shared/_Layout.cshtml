@@ -4,125 +4,68 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Proyecto Biblioteca</title>
+    <link rel="stylesheet" href="~/Style/Index.css">
     <script src="https://kit.fontawesome.com/6d642dc6ea.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" type="text/css" href="~/Style/Index.css")">
+    <title>@ViewBag.Title - Mi aplicación ASP.NET</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-    <header class="header">
-        <div class="header__title">
-            <h1 class="title">BINK. <strong class="title__library">PUBLISHERS</strong></h1>
-        </div>
-        <nav class="header__nav">
-            <div class="nav__links">
-                <ul class="links__list">
-                    <li class="list__item"><a href="#" class="items">Bookstore</a></li>
-                    <li class="list__item"><a href="#" class="items">Events</a></li>
-                    <li class="list__item"><a href="#" class="items">About</a></li>
-                    <li class="list__item"><a href="#" class="items">Contact</a></li>
-                </ul>
+    <div class="container" style="width:100%">
+        <header class="header">
+            <div class="header__title">
+                <h1 class="title">GENIUS. <strong class="title__library">PUBLISHERS</strong></h1>
             </div>
-            <div class="nav__links_session">
-                <ul class="session__list">
-                    <li class="list__item"><a href="#" class="items"><i class="fa-solid fa-circle-user icon"></i></a></li>
-                    <li class="list__item"><a href="#" class="items">Log In</a></li>
-                    <li class="list__item"><a href="#" class="items"><i class="fa-solid fa-cart-arrow-down icon"></i></a></li>
-                </ul>
-            </div>
-        </nav>
-    </header>
-
-    <section class="banner">
-        <img src="https://queleerlibros.com/wp-content/uploads/2019/04/Libros-m%C3%A1s-le%C3%ADdos.png" alt="Imagen de un banner de libros" class="banner__img">
-    </section>
-
-    <section class="gallery">
-        <h3 class="gallery_one__caption">BINK. Publishers</h3>
-        <h2 class="gallery_one__title">BESTSELLERS</h2>
-        <div class="gallery__container">
-            <div class="gallery_one">
-                <div class="gallery_one__div">
-                    <ul class="gallery_one__list">
-                        <li class="list_one__item item_two"><img src="https://pictures.abebooks.com/isbn/9788426713087-us.jpg" alt="Libro de HTML" class="item_book"><p class="item_nombre">I'm a product <br> $20.00</p></li>
-                        <li class="list_one__item item_two"><img src="https://images.cdn1.buscalibre.com/fit-in/360x360/c8/b8/c8b8f14f80a544ad288295ee99dcbde2.jpg" alt="Libro de CSS" class="item_book"><p class="item_nombre">I'm a product <br> $25.00</p></li>
-                        <li class="list_one__item item_two"><img src="https://images-na.ssl-images-amazon.com/images/I/71cWutHj6KL.jpg" alt="Libro de JavaScript" class="item_book"><p class="item_nombre">I'm a product <br> $30.00</p></li>
-                        <li class="list_one__item item_two"><img src="https://images-eu.ssl-images-amazon.com/images/I/41IiBTZOGCL.jpg" alt="Libro de React" class="item_book"><p class="item_nombre">I'm a product <br> $35.00</p></li>
-                        <li class="list_one__item item_two"><img src="https://d2sofvawe08yqg.cloudfront.net/testeando-vuejs/s_hero2x?1620574568" alt="Libro de Vue JS" class="item_book"><p class="item_nombre">I'm a product <br> $40.00</p></li>
-                        <li class="list_one__item item_two"><img src="https://m.media-amazon.com/images/I/51ZO9JM1aFL.jpg" alt="Libro de Angular" class="item_book"><p class="item_nombre">I'm a product <br> $45.00</p></li>
+            <nav class="header__nav">
+                <div class="nav__links_session">
+                    <ul class="session__list">
+                        @*<li class="list__item"><a href="#" class="items">@Html.ActionLink("Login", "Index", "Login")</a></li>*@
+                        <li class="list__item"><a class="btn" style="color: white; background-color: #394465" href="@Url.Action("Index", "Login")">Login</a></li>
+                        <li class="list__item"><a href="#" class="items"><i class="fa-solid fa-circle-user icon"></i></a></li>
                     </ul>
                 </div>
-            </div>
-            <div class="gallery_one">
-                <p class="gallery_one__line">____</p>
-                <h3 class="gallery_one__caption caption__white">This Month's</h3>
-                <h2 class="gallery_one__title title__white">BESTSELLERS</h2>
-                <p class="gallery_one__line line__two">____</p>
-                <div class="gallery_one__div">
-                    <ul class="gallery_one__list">
-                        <li class="list_one__item"><img src="https://www.ediciones-eni.com/libro/java-11-los-fundamentos-del-lenguaje-java-con-ejercicios-practicos-corregidos-9782409027406_XL.jpg" alt="Libro de HTML" class="item_book"><p class="item_nombre">I'm a product <br> $20.00</p></li>
-                        <li class="list_one__item"><img src="https://m.media-amazon.com/images/I/51uExFPDh6L.jpg" alt="Libro de CSS" class="item_book"><p class="item_nombre">I'm a product <br> $25.00</p></li>
-                        <li class="list_one__item"><img src="https://images.cdn1.buscalibre.com/fit-in/360x360/99/5f/995f6c02ae321d978ac3197b4697835d.jpg" alt="Libro de JavaScript" class="item_book"><p class="item_nombre">I'm a product <br> $30.00</p></li>
-                        <li class="list_one__item"><img src="https://images.cdn2.buscalibre.com/fit-in/360x360/4f/74/4f74fa76ce1703384cf9f6694a308d01.jpg" alt="Libro de React" class="item_book"><p class="item_nombre">I'm a product <br> $35.00</p></li>
-                        <li class="list_one__item"><img src="https://www.ingebook.com/ib/pimg/Ingebook/00100_0000005167_4224.jpg" alt="Libro de Vue JS" class="item_book"><p class="item_nombre">I'm a product <br> $40.00</p></li>
-                        <li class="list_one__item"><img src="https://3.bp.blogspot.com/-Q7KtR3Lgvmg/W0wdkCZJ-4I/AAAAAAAAFkY/QvNiZ0Itsn0sJWCz7Hu31ITKqV7bpgpNgCLcBGAs/s1600/como-programar-en-c-sharp-2da-edicion-harvey-m-deitel-lv-fl.jpg" alt="Libro de Angular" class="item_book"><p class="item_nombre">I'm a product <br> $45.00</p></li>
-                    </ul>
-                </div>
-                <div class="gallery__foot">
-                    <p class="gallery_one__line line__three line__four line__five">____</p>
-                    <h3 class="foot__title">THERE'S NO <br>SUCH THING AS TOO <br>MANY BOOKS</h3>
-                    <button class="foot__button">Read Our Story</button>
-                    <p class="gallery_one__line line__three line__four">____</p>
-                </div>
-            </div>
-        </div>
-    </section>
+            </nav>
+        </header>
+    </div>
+    
+    <div class="container" style="width:100%">
+        @RenderBody()
+    </div>
+    <div class="container" style="width:100%">
+        <hr />
+        <footer class="footer">
+            <ul class="footer__list">
+                <li class="list__item mister">BINK. Publishers</li>
+                <li class="list__item">500 Terry Francois St.</li>
+                <li class="list__item">San Francisco, CA 94158</li>
+                <li class="list__item">123-456-7890</li>
+                <li class="list__item">info@my-domain.com</li>
+            </ul>
+            <ul class="footer__list">
+                <li class="list__item mister">Shop</li>
+                <li class="list__item">FAQ</li>
+                <li class="list__item">Shipping & Returns</li>
+                <li class="list__item">Store Policy</li>
+                <li class="list__item">Payment Methods</li>
+            </ul>
+            <ul class="footer__list">
+                <li class="list__item mister">Socials</li>
+                <li class="list__item">Facebook</li>
+                <li class="list__item">Twitter</li>
+                <li class="list__item">Instagram</li>
+                <li class="list__item">Pinterest</li>
+            </ul>
+            <ul class="footer__list">
+                <li class="list__item mister">Be the First to Know</li>
+                <li class="list__item">Sign up for our newsletter</li>
+                <li class="list__item"><input type="email" class="item__email" placeholder="Enter your email here*"></li>
+                <li class="list__item"><input type="button" class="item__button" value="Subscribe"></li>
+            </ul>
+        </footer>
+    </div>
 
-    <aside class="aside">
-        <h3 class="gallery_one__caption">Coming Up</h3>
-        <h2 class="gallery_one__title">BOOK LAUNCH</h2>
-        <div class="aside__container">
-            <div class="aside__contact">
-                <h2 class="contact__title aside__color">Introducing The Land Of AILOO</h2>
-                <h3 class="contact__caption aside__color">By Mark Walker</h3>
-                <h3 class="contact__schedule aside__color">When<br>__<br><br>Jul 12, 2022, 7:00 PM </h3>
-                <h3 class="contact__schedule__two aside__color">Where <br>__<br><br>500 Terry A Francois Blvd,<br>500 Terry A Francois Blvd, San Francisco, CA 94158, USA</h3>
-                <button class="contact__button aside__color">RSVP NOW</button>
-            </div>
-            <div class="aside__img">
-                <img src="https://olcovers2.blob.core.windows.net/coverswp/2011/08/asp_net_Guia_Desarrollo_OpenLibra.gif" alt="Imagen de Libro de ASP.NET" class="img">
-            </div>
-        </div>
-    </aside>
-
-    <footer class="footer">
-        <ul class="footer__list">
-            <li class="list__item mister">BINK. Publishers</li>
-            <li class="list__item">500 Terry Francois St.</li>
-            <li class="list__item">San Francisco, CA 94158</li>
-            <li class="list__item">123-456-7890</li>
-            <li class="list__item">info@my-domain.com</li>
-        </ul>
-        <ul class="footer__list">
-            <li class="list__item mister">Shop</li>
-            <li class="list__item">FAQ</li>
-            <li class="list__item">Shipping & Returns</li>
-            <li class="list__item">Store Policy</li>
-            <li class="list__item">Payment Methods</li>
-        </ul>
-        <ul class="footer__list">
-            <li class="list__item mister">Socials</li>
-            <li class="list__item">Facebook</li>
-            <li class="list__item">Twitter</li>
-            <li class="list__item">Instagram</li>
-            <li class="list__item">Pinterest</li>
-        </ul>
-        <ul class="footer__list">
-            <li class="list__item mister">Be the First to Know</li>
-            <li class="list__item">Sign up for our newsletter</li>
-            <li class="list__item"><input type="email" class="item__email" placeholder="Enter your email here*"></li>
-            <li class="list__item"><input type="button" class="item__button" value="Subscribe"></li>
-        </ul>
-    </footer>
-    @RenderBody()
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
 </body>
 </html>

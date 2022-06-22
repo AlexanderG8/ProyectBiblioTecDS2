@@ -1,0 +1,53 @@
+﻿
+@{
+    ViewBag.Title = "PaginaPrincipal";
+    Layout = null;
+}
+
+<head>
+    <link rel="stylesheet" href="~/Style/buscador.css">
+    <link rel="stylesheet" href="~/Style/Index.css">
+    <script src="https://kit.fontawesome.com/6d642dc6ea.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+
+<header class="header_search">
+    <img src="~/Style/img/logo.png" alt="Logo Biblioteca" class="logo">
+    <h2 class="gallery_one__caption caption_search">¡Busca tu libro favorito!</h2>
+    <button type="button" class="btn_header">@Html.ActionLink("Cerrar Sesión", "CerrarSesion", "Login")</button>
+</header>
+
+<section>
+    <img src="https://images.pexels.com/photos/1181571/pexels-photo-1181571.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Foto de portada de una biblioteca" class="banner__img">
+</section>
+
+<section>
+    <form action="" class="form_search">
+        <input type="text" placeholder="Buscar por nombre del libro" class="box_text">
+        <button type="submit" class="btn__search">Buscar</button>
+    </form>
+    <br />
+    <br />
+    <br />
+    <br />
+    <div class="gallery_one__div container__search">
+        <ul class="gallery_one__list" style="color:black!important;">
+            <li class="list_one__item item_two item_search"><img src="https://pictures.abebooks.com/isbn/9788426713087-us.jpg" alt="Libro de HTML" class="item_book book_search"><p class="item_nombre">Comprendium HTML</p></li>
+            <li class="list_one__item item_two item_search"><img src="https://images.cdn1.buscalibre.com/fit-in/360x360/c8/b8/c8b8f14f80a544ad288295ee99dcbde2.jpg" alt="Libro de CSS" class="item_book book_search"><p class="item_nombre">Diseño Web con CSS</p></li>
+            <li class="list_one__item item_two item_search"><img src="https://images-na.ssl-images-amazon.com/images/I/71cWutHj6KL.jpg" alt="Libro de JavaScript" class="item_book book_search"><p class="item_nombre">Domine JavaScript</p></li>
+            <li class="list_one__item item_two item_search"><img src="https://images-eu.ssl-images-amazon.com/images/I/41IiBTZOGCL.jpg" alt="Libro de React" class="item_book book_search"><p class="item_nombre">React</p></li>
+            <li class="list_one__item item_two item_search"><img src="https://d2sofvawe08yqg.cloudfront.net/testeando-vuejs/s_hero2x?1620574568" alt="Libro de Vue JS" class="item_book book_search"><p class="item_nombre">Testeando Componentes <br> de Vue.js con Jest</p></li>
+            <li class="list_one__item item_two item_search"><img src="https://m.media-amazon.com/images/I/51ZO9JM1aFL.jpg" alt="Libro de Angular" class="item_book book_search"><p class="item_nombre">Desarrollo Web ágil con <br> Angular.js</p></li>
+            <li class="list_one__item item_search"><img src="https://www.ediciones-eni.com/libro/java-11-los-fundamentos-del-lenguaje-java-con-ejercicios-practicos-corregidos-9782409027406_XL.jpg" alt="Libro de HTML" class="item_book book_search"><p class="item_nombre">Java 11</p></li>
+            <li class="list_one__item item_search"><img src="https://m.media-amazon.com/images/I/51uExFPDh6L.jpg" alt="Libro de CSS" class="item_book book_search"><p class="item_nombre">Python para principiantes</p></li>
+            <li class="list_one__item item_search"><img src="https://images.cdn1.buscalibre.com/fit-in/360x360/99/5f/995f6c02ae321d978ac3197b4697835d.jpg" alt="Libro de JavaScript" class="item_book book_search"><p class="item_nombre">PHP</p></li>
+            <li class="list_one__item item_search"><img src="https://images.cdn2.buscalibre.com/fit-in/360x360/4f/74/4f74fa76ce1703384cf9f6694a308d01.jpg" alt="Libro de React" class="item_book book_search"><p class="item_nombre">Node.js</p></li>
+            <li class="list_one__item item_search"><img src="https://www.ingebook.com/ib/pimg/Ingebook/00100_0000005167_4224.jpg" alt="Libro de Vue JS" class="item_book book_search"><p class="item_nombre">Estructura de datos en <br> C++</p></li>
+            <li class="list_one__item item_search"><img src="https://3.bp.blogspot.com/-Q7KtR3Lgvmg/W0wdkCZJ-4I/AAAAAAAAFkY/QvNiZ0Itsn0sJWCz7Hu31ITKqV7bpgpNgCLcBGAs/s1600/como-programar-en-c-sharp-2da-edicion-harvey-m-deitel-lv-fl.jpg" alt="Libro de Angular" class="item_book book_search"><p class="item_nombre">Cómo programar | C#</p></li>
+        </ul>
+    </div>
+</section>
+
+<footer class="footer_search">
+    <p class="foot_search">&COPY Derechos Reservados Biblioteca</p>
+</footer>

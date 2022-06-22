@@ -1,0 +1,50 @@
+﻿@model waBiblioteca.RUTA_LIBRO
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>RUTA_LIBRO</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NOM_RUTA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NOM_RUTA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NOM_ARCHI)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NOM_ARCHI)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NOM_ARCHI_FISIC)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NOM_ARCHI_FISIC)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IDD_LIBRO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IDD_LIBRO)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IDD_RUTA_LIBRO }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,73 @@
+﻿@model IEnumerable<waBiblioteca.CATEGORIA>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = null;
+}
+
+<head>
+    <link rel="stylesheet" href="~/Style/buscador.css">
+    <link rel="stylesheet" href="~/Style/Index.css">
+    <script src="https://kit.fontawesome.com/6d642dc6ea.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+
+<header class="header_search">
+    <img src="~/Style/img/logo.png" alt="Logo Biblioteca" class="logo">
+    <h2 class="gallery_one__caption caption_search">¡Administrador!</h2>
+    <button type="button" class="btn_header">@Html.ActionLink("Cerrar Sesión", "CerrarSesion", "Login")</button>
+</header>
+
+<div class="container body-content">
+    <h2>Lista de categorias</h2>
+
+    <form action="/Categoria/Index" method="post">
+        <div class="row">
+            <div class="col-md-4">
+                <input class="form-control" type="text" name="nombre" placeholder="Ingrese categoría" />
+            </div>
+            <div class="col-md-1">
+                <input type="submit" class="btn btn-success" value="Buscar" />
+            </div>
+        </div>
+    </form>
+    <br />
+
+    <p>
+        @Html.ActionLink("Nuevo Registro", "Create", "Categoria", new { @class = "btn btn-info", @style = "color:white" })
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.DESCRIPCION)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DESCRIPCION)
+                </td>
+                <td>
+                    @Html.ActionLink("Editar", "Edit", "Categoria", new { id = item.IDD_CATER }, new { @class = "btn btn-warning" }) |
+                    @Html.ActionLink("Eliminar", "Delete", "Categoria", new { id = item.IDD_CATER }, new { @class = "btn btn-danger" })
+                </td>
+            </tr>
+        }
+
+    </table>
+    <div>
+        <a class="btn btn-secondary" style="color:white" href="@Url.Action("Administrador", "Login")">Regresar</a>
+    </div>
+</div>
+
+<br />
+<br />
+
+<footer class="footer_search">
+    <p class="foot_search">&COPY Derechos Reservados Biblioteca</p>
+</footer>
+
+

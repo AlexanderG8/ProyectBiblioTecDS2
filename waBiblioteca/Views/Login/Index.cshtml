@@ -1,0 +1,56 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = null;
+}
+
+<head>
+    <link rel="stylesheet" href="~/Style/Index.css">
+    <script src="https://kit.fontawesome.com/6d642dc6ea.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+<br />
+<div class="container" style="width:100%">
+    <header class="header">
+        <div class="header__title">
+            <h1 class="title">GENIUS. <strong class="title__library">PUBLISHERS</strong></h1>
+        </div>
+        <nav class="header__nav">
+            <div class="nav__links_session">
+                <ul class="session__list">
+                    @*<li class="list__item">@Html.ActionLink("Home", "Index", "Home", new { @class = "btn", @style = "color:white; background-color: #394465" })</li>*@
+                    <li class="list__item"><a class="btn" style="color: white; background-color: #394465" href="@Url.Action("Index", "Home")">Home</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+</div>
+<br />
+<br />
+<br />
+<br />
+<br />
+<div class="container body-content" style="border: inset #394465;width:400px; border-radius:10px">
+    <br />
+    <img src="~/Style/img/user.png" alt="Usuario" class="img-circle" style="padding-left:170px"/>
+    <h2 class="text-center">Login</h2>
+    <form action="~/Login/Logearse" method="post">
+        <div class="form-group">
+            <label for="exampleInputEmail1">Email</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingresa email" name="username">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Contraseña</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Contraseña" name="password">
+            <span style="color: red; padding-left: 120px">@ViewBag.Mensaje</span>
+        </div>
+        <div class="form-check">
+        </div>
+        <button type="submit" class="btn btn-primary text-center" style="margin-left:140px">Ingresar</button>
+        <br />
+        <br />
+        <p class="foot_search text-center">&COPY Derechos Reservados Biblioteca</p>
+        <br />
+    </form>
+</div>
+

@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DS2_BIBLIOTECAModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="CATEGORIA">
+    <Key>
+      <PropertyRef Name="IDD_CATER" />
+    </Key>
+    <Property Name="IDD_CATER" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DESCRIPCION" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="LIBRO" Relationship="Self.FK_IDD_CATER" FromRole="CATEGORIA" ToRole="LIBRO" />
+  </EntityType>
+  <EntityType Name="LIBRO">
+    <Key>
+      <PropertyRef Name="IDD_LIBRO" />
+    </Key>
+    <Property Name="IDD_LIBRO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NOM_LIBRO" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="NOM_EDITO" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="NOM_AUTOR" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="NOM_IDIOM" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="NUM_PAGIN" Type="Int32" />
+    <Property Name="DES_RESUM" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="IDD_CATER" Type="Int32" />
+    <NavigationProperty Name="CATEGORIA" Relationship="Self.FK_IDD_CATER" FromRole="LIBRO" ToRole="CATEGORIA" />
+    <NavigationProperty Name="LOG_LIBRO" Relationship="Self.FK_IDD_LIBRO" FromRole="LIBRO" ToRole="LOG_LIBRO" />
+  </EntityType>
+  <EntityType Name="LOG_LIBRO">
+    <Key>
+      <PropertyRef Name="IDD_LOG_LIBRO" />
+    </Key>
+    <Property Name="IDD_LOG_LIBRO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IDD_LIBRO" Type="Int32" />
+    <Property Name="IDD_USUAR" Type="Int32" />
+    <NavigationProperty Name="LIBRO" Relationship="Self.FK_IDD_LIBRO" FromRole="LOG_LIBRO" ToRole="LIBRO" />
+    <NavigationProperty Name="USUARIO" Relationship="Self.FK_IDD_USUAR" FromRole="LOG_LIBRO" ToRole="USUARIO" />
+  </EntityType>
+  <EntityType Name="ROL">
+    <Key>
+      <PropertyRef Name="IDD_ROL" />
+    </Key>
+    <Property Name="IDD_ROL" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DESCRIPCION" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="USUARIO" Relationship="Self.FK_IDD_ROL" FromRole="ROL" ToRole="USUARIO" />
+  </EntityType>
+  <EntityType Name="RUTA_LIBRO">
+    <Key>
+      <PropertyRef Name="IDD_RUTA_LIBRO" />
+    </Key>
+    <Property Name="IDD_RUTA_LIBRO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NOM_RUTA" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="NOM_ARCHI" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="NOM_ARCHI_FISIC" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="IDD_LIBRO" Type="Int32" />
+  </EntityType>
+  <EntityType Name="USUARIO">
+    <Key>
+      <PropertyRef Name="IDD_USUAR" />
+    </Key>
+    <Property Name="IDD_USUAR" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NOM_USUAR" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="APE_USUAR" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="TIP_DOCUM" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="NUM_DOCUM" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="NOM_CORRE" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="DES_CONTR" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IDD_ROL" Type="Int32" />
+    <NavigationProperty Name="LOG_LIBRO" Relationship="Self.FK_IDD_USUAR" FromRole="USUARIO" ToRole="LOG_LIBRO" />
+    <NavigationProperty Name="ROL" Relationship="Self.FK_IDD_ROL" FromRole="USUARIO" ToRole="ROL" />
+  </EntityType>
+  <Association Name="FK_IDD_CATER">
+    <End Role="CATEGORIA" Type="Self.CATEGORIA" Multiplicity="0..1" />
+    <End Role="LIBRO" Type="Self.LIBRO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CATEGORIA">
+        <PropertyRef Name="IDD_CATER" />
+      </Principal>
+      <Dependent Role="LIBRO">
+        <PropertyRef Name="IDD_CATER" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_IDD_LIBRO">
+    <End Role="LIBRO" Type="Self.LIBRO" Multiplicity="0..1" />
+    <End Role="LOG_LIBRO" Type="Self.LOG_LIBRO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LIBRO">
+        <PropertyRef Name="IDD_LIBRO" />
+      </Principal>
+      <Dependent Role="LOG_LIBRO">
+        <PropertyRef Name="IDD_LIBRO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_IDD_USUAR">
+    <End Role="USUARIO" Type="Self.USUARIO" Multiplicity="0..1" />
+    <End Role="LOG_LIBRO" Type="Self.LOG_LIBRO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="USUARIO">
+        <PropertyRef Name="IDD_USUAR" />
+      </Principal>
+      <Dependent Role="LOG_LIBRO">
+        <PropertyRef Name="IDD_USUAR" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_IDD_ROL">
+    <End Role="ROL" Type="Self.ROL" Multiplicity="0..1" />
+    <End Role="USUARIO" Type="Self.USUARIO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ROL">
+        <PropertyRef Name="IDD_ROL" />
+      </Principal>
+      <Dependent Role="USUARIO">
+        <PropertyRef Name="IDD_ROL" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DS2_BIBLIOTECAEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="CATEGORIA" EntityType="Self.CATEGORIA" />
+    <EntitySet Name="LIBRO" EntityType="Self.LIBRO" />
+    <EntitySet Name="LOG_LIBRO" EntityType="Self.LOG_LIBRO" />
+    <EntitySet Name="ROL" EntityType="Self.ROL" />
+    <EntitySet Name="RUTA_LIBRO" EntityType="Self.RUTA_LIBRO" />
+    <EntitySet Name="USUARIO" EntityType="Self.USUARIO" />
+    <AssociationSet Name="FK_IDD_CATER" Association="Self.FK_IDD_CATER">
+      <End Role="CATEGORIA" EntitySet="CATEGORIA" />
+      <End Role="LIBRO" EntitySet="LIBRO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_IDD_LIBRO" Association="Self.FK_IDD_LIBRO">
+      <End Role="LIBRO" EntitySet="LIBRO" />
+      <End Role="LOG_LIBRO" EntitySet="LOG_LIBRO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_IDD_USUAR" Association="Self.FK_IDD_USUAR">
+      <End Role="USUARIO" EntitySet="USUARIO" />
+      <End Role="LOG_LIBRO" EntitySet="LOG_LIBRO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_IDD_ROL" Association="Self.FK_IDD_ROL">
+      <End Role="ROL" EntitySet="ROL" />
+      <End Role="USUARIO" EntitySet="USUARIO" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

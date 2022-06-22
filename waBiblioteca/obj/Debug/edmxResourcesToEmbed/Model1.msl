@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DS2_BIBLIOTECAModelStoreContainer" CdmEntityContainer="DS2_BIBLIOTECAEntities">
+    <EntitySetMapping Name="CATEGORIA">
+      <EntityTypeMapping TypeName="DS2_BIBLIOTECAModel.CATEGORIA">
+        <MappingFragment StoreEntitySet="CATEGORIA">
+          <ScalarProperty Name="IDD_CATER" ColumnName="IDD_CATER" />
+          <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LIBRO">
+      <EntityTypeMapping TypeName="DS2_BIBLIOTECAModel.LIBRO">
+        <MappingFragment StoreEntitySet="LIBRO">
+          <ScalarProperty Name="IDD_LIBRO" ColumnName="IDD_LIBRO" />
+          <ScalarProperty Name="NOM_LIBRO" ColumnName="NOM_LIBRO" />
+          <ScalarProperty Name="NOM_EDITO" ColumnName="NOM_EDITO" />
+          <ScalarProperty Name="NOM_AUTOR" ColumnName="NOM_AUTOR" />
+          <ScalarProperty Name="NOM_IDIOM" ColumnName="NOM_IDIOM" />
+          <ScalarProperty Name="NUM_PAGIN" ColumnName="NUM_PAGIN" />
+          <ScalarProperty Name="DES_RESUM" ColumnName="DES_RESUM" />
+          <ScalarProperty Name="IDD_CATER" ColumnName="IDD_CATER" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LOG_LIBRO">
+      <EntityTypeMapping TypeName="DS2_BIBLIOTECAModel.LOG_LIBRO">
+        <MappingFragment StoreEntitySet="LOG_LIBRO">
+          <ScalarProperty Name="IDD_LOG_LIBRO" ColumnName="IDD_LOG_LIBRO" />
+          <ScalarProperty Name="IDD_LIBRO" ColumnName="IDD_LIBRO" />
+          <ScalarProperty Name="IDD_USUAR" ColumnName="IDD_USUAR" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ROL">
+      <EntityTypeMapping TypeName="DS2_BIBLIOTECAModel.ROL">
+        <MappingFragment StoreEntitySet="ROL">
+          <ScalarProperty Name="IDD_ROL" ColumnName="IDD_ROL" />
+          <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RUTA_LIBRO">
+      <EntityTypeMapping TypeName="DS2_BIBLIOTECAModel.RUTA_LIBRO">
+        <MappingFragment StoreEntitySet="RUTA_LIBRO">
+          <ScalarProperty Name="IDD_RUTA_LIBRO" ColumnName="IDD_RUTA_LIBRO" />
+          <ScalarProperty Name="NOM_RUTA" ColumnName="NOM_RUTA" />
+          <ScalarProperty Name="NOM_ARCHI" ColumnName="NOM_ARCHI" />
+          <ScalarProperty Name="NOM_ARCHI_FISIC" ColumnName="NOM_ARCHI_FISIC" />
+          <ScalarProperty Name="IDD_LIBRO" ColumnName="IDD_LIBRO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="USUARIO">
+      <EntityTypeMapping TypeName="DS2_BIBLIOTECAModel.USUARIO">
+        <MappingFragment StoreEntitySet="USUARIO">
+          <ScalarProperty Name="IDD_USUAR" ColumnName="IDD_USUAR" />
+          <ScalarProperty Name="NOM_USUAR" ColumnName="NOM_USUAR" />
+          <ScalarProperty Name="APE_USUAR" ColumnName="APE_USUAR" />
+          <ScalarProperty Name="TIP_DOCUM" ColumnName="TIP_DOCUM" />
+          <ScalarProperty Name="NUM_DOCUM" ColumnName="NUM_DOCUM" />
+          <ScalarProperty Name="NOM_CORRE" ColumnName="NOM_CORRE" />
+          <ScalarProperty Name="DES_CONTR" ColumnName="DES_CONTR" />
+          <ScalarProperty Name="IDD_ROL" ColumnName="IDD_ROL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

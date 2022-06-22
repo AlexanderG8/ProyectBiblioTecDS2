@@ -1,0 +1,107 @@
+﻿@model waBiblioteca.USUARIO
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = null;
+}
+
+<head>
+    <link rel="stylesheet" href="~/Style/buscador.css">
+    <link rel="stylesheet" href="~/Style/Index.css">
+    <script src="https://kit.fontawesome.com/6d642dc6ea.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+
+<header class="header_search">
+    <img src="~/Style/img/logo.png" alt="Logo Biblioteca" class="logo">
+    <h2 class="gallery_one__caption caption_search">¡Administrador!</h2>
+    <button type="button" class="btn_header">@Html.ActionLink("Cerrar Sesión", "CerrarSesion", "Login")</button>
+</header>
+
+<div class="container">
+    <h2>Editar de usuario</h2>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            @Html.HiddenFor(model => model.IDD_USUAR)
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.NOM_USUAR, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.NOM_USUAR, new { htmlAttributes = new { @class = "form-control", @style = "width:400px" } })
+                    @Html.ValidationMessageFor(model => model.NOM_USUAR, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.APE_USUAR, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.APE_USUAR, new { htmlAttributes = new { @class = "form-control", @style = "width:400px" } })
+                    @Html.ValidationMessageFor(model => model.APE_USUAR, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.TIP_DOCUM, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.TIP_DOCUM, new { htmlAttributes = new { @class = "form-control", @style = "width:400px" } })
+                    @Html.ValidationMessageFor(model => model.TIP_DOCUM, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.NUM_DOCUM, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.NUM_DOCUM, new { htmlAttributes = new { @class = "form-control", @style = "width:400px" } })
+                    @Html.ValidationMessageFor(model => model.NUM_DOCUM, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.NOM_CORRE, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.NOM_CORRE, new { htmlAttributes = new { @class = "form-control", @style = "width:400px" } })
+                    @Html.ValidationMessageFor(model => model.NOM_CORRE, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.DES_CONTR, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.DES_CONTR, new { htmlAttributes = new { @class = "form-control", @style = "width:400px" } })
+                    @Html.ValidationMessageFor(model => model.DES_CONTR, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.IDD_ROL, "Rol", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DropDownList("IDD_ROL", null, htmlAttributes: new { @class = "form-control", @style = "width:400px" })
+                    @Html.ValidationMessageFor(model => model.IDD_ROL, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <br />
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Guardar" class="btn btn-success" />
+                </div>
+            </div>
+        </div>
+    }
+    <br />
+    <div>
+        @Html.ActionLink("Regresar a lista", "Index", "Usuario", new { @class = "btn btn-secondary", @style = "color:white" })
+    </div>
+</div>
+<br />
+
+<footer class="footer_search">
+    <p class="foot_search">&COPY Derechos Reservados Biblioteca</p>
+</footer>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

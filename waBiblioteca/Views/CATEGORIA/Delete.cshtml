@@ -1,0 +1,66 @@
+﻿@model waBiblioteca.CATEGORIA
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = null;
+}
+
+<head>
+    <link rel="stylesheet" href="~/Style/buscador.css">
+    <link rel="stylesheet" href="~/Style/Index.css">
+    <script src="https://kit.fontawesome.com/6d642dc6ea.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+
+<header class="header_search">
+    <img src="~/Style/img/logo.png" alt="Logo Biblioteca" class="logo">
+    <h2 class="gallery_one__caption caption_search">¡Administrador!</h2>
+    <button type="button" class="btn_header">@Html.ActionLink("Cerrar Sesión", "CerrarSesion", "Login")</button>
+</header>
+
+<div class="container body-content">
+    <h3>Estas seguro que deseas eliminar este registro?</h3>
+    <div>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.DESCRIPCION)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.DESCRIPCION)
+            </dd>
+
+        </dl>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color">
+                <input type="submit" value="Eliminar" class="btn btn-danger" /> |
+                @Html.ActionLink("Regresar a lista", "Index", "Categoria", new { @class = "btn btn-secondary", @style = "color:white" })
+            </div>
+        }
+    </div>
+</div>
+
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+
+<footer class="footer_search">
+    <p class="foot_search">&COPY Derechos Reservados Biblioteca</p>
+</footer>

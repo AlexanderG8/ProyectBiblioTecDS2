@@ -1,0 +1,108 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+   
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300&display=swap');
+
+:root {
+    --backgorund_color: #F7F7F7;
+    --color_major: #394465;
+    --background_img: #CFD1D5;
+    --title: 'Kdam Thmor Pro', sans-serif;
+    --nav: 'Josefin Sans', sans-serif;
+    --title_gallery: 'Merriweather', serif;
+    --price: 'Raleway', sans-serif;
+    --button: 'Quicksand', sans-serif;
+    --caption: 'Heebo', sans-serif;
+}
+
+.header_search {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px;
+    margin-bottom: 50px;
+}
+
+.logo {
+    width: 180px;
+}
+
+.btn_header {
+    background-color: var(--backgorund_color);
+    color: var(--color_major);
+    padding: 10px 40px;
+    font-family: var(--button);
+    font-size: 15px;
+    transition: .4s;
+}
+
+.btn_header:hover {
+    background-color: var(--color_major);
+    color: var(--backgorund_color);
+    cursor: pointer;
+}
+
+.caption_search {
+    font-size: 60px;
+    margin-top: -1px;
+}
+
+.form_search {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.box_text {
+    padding: 15px 300px 15px 10px;
+}
+
+.btn__search {
+    padding: 15px 40px 15px 40px;
+    color: var(--backgorund_color);
+    background-color: var(--color_major);
+    font-family: var(--button);
+}
+
+.btn__search:hover {
+    background-color: #445179;
+    cursor: pointer;
+}
+
+.container__search {
+    margin-top: 80px;
+}
+
+.item_search {
+    border: 1px solid var(--color_major);
+    border-radius: 10px;
+    margin-top: 20px;
+    padding: 10px 5px 20px 5px;
+}
+
+.item_search:hover {
+    outline: 2px solid var(--color_major);
+    cursor: pointer;
+}
+
+.item_nombre {
+    color: var(--color_major);
+    font-family: var(--caption);
+}
+
+.book_search {
+    background-color: white;
+}
+
+.footer_search {
+    text-align: center;
+    margin: 30px 0 5px 0;
+}

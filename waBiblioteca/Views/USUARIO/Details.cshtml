@@ -1,0 +1,74 @@
+﻿@model waBiblioteca.USUARIO
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>USUARIO</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NOM_USUAR)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NOM_USUAR)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.APE_USUAR)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.APE_USUAR)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TIP_DOCUM)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TIP_DOCUM)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NUM_DOCUM)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NUM_DOCUM)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NOM_CORRE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NOM_CORRE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DES_CONTR)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DES_CONTR)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ROL.DESCRIPCION)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ROL.DESCRIPCION)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IDD_USUAR }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

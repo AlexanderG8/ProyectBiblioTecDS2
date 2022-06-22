@@ -1,0 +1,112 @@
+﻿@model IEnumerable<waBiblioteca.LIBRO>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = null;
+}
+
+<head>
+    <link rel="stylesheet" href="~/Style/buscador.css">
+    <link rel="stylesheet" href="~/Style/Index.css">
+    <script src="https://kit.fontawesome.com/6d642dc6ea.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+
+<header class="header_search">
+    <img src="~/Style/img/logo.png" alt="Logo Biblioteca" class="logo">
+    <h2 class="gallery_one__caption caption_search">¡Administrador!</h2>
+    <button type="button" class="btn_header">@Html.ActionLink("Cerrar Sesión", "CerrarSesion", "Login")</button>
+</header>
+
+<div class="container body-content">
+    <h2>Lista de Libros</h2>
+
+    <form action="/Libro/Index" method="post">
+        <div class="row">
+            <div class="col-md-4">
+                <input class="form-control" type="text" name="nombre" placeholder="Ingrese nombre, categoria o autor del libro" />
+            </div>
+            <div class="col-md-1">
+                <input type="submit" class="btn btn-success" value="Buscar" />
+            </div>
+        </div>
+    </form>
+    <br />
+
+    <p>
+        @Html.ActionLink("Nuevo Registro", "Create", "Libro", new { @class = "btn btn-info", @style = "color:white" })
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NOM_LIBRO)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NOM_EDITO)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NOM_AUTOR)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NOM_IDIOM)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NUM_PAGIN)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DES_RESUM)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CATEGORIA.DESCRIPCION)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td class="col-md-1">
+                    @Html.DisplayFor(modelItem => item.NOM_LIBRO)
+                </td>
+                <td class="col-md-1">
+                    @Html.DisplayFor(modelItem => item.NOM_EDITO)
+                </td>
+                <td class="col-md-1">
+                    @Html.DisplayFor(modelItem => item.NOM_AUTOR)
+                </td>
+                <td class="col-md-1">
+                    @Html.DisplayFor(modelItem => item.NOM_IDIOM)
+                </td>
+                <td class="col-md-1">
+                    @Html.DisplayFor(modelItem => item.NUM_PAGIN)
+                </td>
+                <td class="col-md-3">
+                    @Html.DisplayFor(modelItem => item.DES_RESUM)
+                </td>
+                <td class="col-md-2">
+                    @Html.DisplayFor(modelItem => item.CATEGORIA.DESCRIPCION)
+                </td>
+                <td>
+                    @Html.ActionLink("Editar", "Edit", "Libro", new { id = item.IDD_LIBRO }, new { @class = "btn btn-warning" }) |
+                    @Html.ActionLink("Eliminar", "Delete", "Libro", new { id = item.IDD_LIBRO }, new { @class = "btn btn-danger" })
+                </td>
+            </tr>
+        }
+
+    </table>
+    <div>
+        <a class="btn btn-secondary" style="color:white" href="@Url.Action("Administrador", "Login")">Regresar</a>
+    </div>
+
+</div>
+
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+
+<footer class="footer_search">
+    <p class="foot_search">&COPY Derechos Reservados Biblioteca</p>
+</footer>

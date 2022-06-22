@@ -1,0 +1,61 @@
+﻿
+@{
+    ViewBag.Title = "Administrador";
+    Layout = null;
+}
+
+<head>
+    <link rel="stylesheet" href="~/Style/buscador.css">
+    <link rel="stylesheet" href="~/Style/Index.css">
+    <script src="https://kit.fontawesome.com/6d642dc6ea.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+
+<header class="header_search">
+    <img src="~/Style/img/logo.png" alt="Logo Biblioteca" class="logo">
+    <h2 class="gallery_one__caption caption_search">¡Administrador!</h2>
+    <button type="button" class="btn_header">@Html.ActionLink("Cerrar Sesión", "CerrarSesion", "Login")</button>
+</header>
+
+<div class="container body-content">
+    <div class="row">
+        <div class="col-md-4" style="border: inset #364265; border-radius:20px; width:400px ;margin:10px; padding:10px">
+            <h2>Usuarios</h2>
+            <p>
+                Mantenimiento de usuarios.
+            </p>
+            <a class="btn btn-success" href="@Url.Action("Index", "Usuario")">Ingresar</a>
+            <br />
+        </div>
+        <div class="col-md-4" style="border: inset #364265; border-radius: 20px; width: 400px; margin: 10px; padding: 10px">
+            <h2>Libros</h2>
+            <p>Mantenimiento de libros.</p>
+            <a class="btn btn-success" href="@Url.Action("Index", "Libro")">Ingresar</a>
+            <br />
+        </div>
+        <div class="col-md-4" style="border: inset #364265; border-radius: 20px; width: 400px; margin: 10px; padding: 10px">
+            <h2>Roles</h2>
+            <p>Mantenimiento de los roles que cumplira el usuario.</p>
+            <a class="btn btn-success" href="@Url.Action("Index", "Rol")">Ingresar</a>
+            <br />
+        </div>
+        <div class="col-md-4" style="border: inset #364265; border-radius: 20px; width: 400px; margin: 10px; padding: 10px">
+            <h2>Categoria</h2>
+            <p>Mantenimiento de las categoria de los libros.</p>
+            <a class="btn btn-success" href="@Url.Action("Index", "Categoria")">Ingresar</a>
+            <br />
+        </div>
+    </div>
+</div>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<footer class="footer_search">
+    <p class="foot_search">&COPY Derechos Reservados Biblioteca</p>
+</footer>

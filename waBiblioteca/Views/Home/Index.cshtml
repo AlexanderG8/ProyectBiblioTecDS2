@@ -2,30 +2,63 @@
     ViewBag.Title = "Home Page";
 }
 
-<div class="jumbotron" hidden>
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
+<section class="banner">
+    <img src="https://queleerlibros.com/wp-content/uploads/2019/04/Libros-m%C3%A1s-le%C3%ADdos.png" alt="Imagen de un banner de libros" class="banner__img">
+</section>
+<section class="gallery">
+    <h3 class="gallery_one__caption">Genius. Publishers</h3>
+    <h2 class="gallery_one__title">¡¡MÁS DESCARGADOS!!</h2>
+    <div class="gallery__container">
+        <div class="gallery_one">
+            <div class="gallery_one__div">
+                <ul class="gallery_one__list">
+                    <li class="list_one__item item_two"><img src="https://pictures.abebooks.com/isbn/9788426713087-us.jpg" alt="Libro de HTML" class="item_book"><p class="item_nombre">Comprendium HTML</p></li>
+                    <li class="list_one__item item_two"><img src="https://images.cdn1.buscalibre.com/fit-in/360x360/c8/b8/c8b8f14f80a544ad288295ee99dcbde2.jpg" alt="Libro de CSS" class="item_book"><p class="item_nombre">Diseño web con CSS</p></li>
+                    <li class="list_one__item item_two"><img src="https://images-na.ssl-images-amazon.com/images/I/71cWutHj6KL.jpg" alt="Libro de JavaScript" class="item_book"><p class="item_nombre">Domine JavaScript</p></li>
+                    <li class="list_one__item item_two"><img src="https://images-eu.ssl-images-amazon.com/images/I/41IiBTZOGCL.jpg" alt="Libro de React" class="item_book"><p class="item_nombre">React</p></li>
+                    <li class="list_one__item item_two"><img src="https://d2sofvawe08yqg.cloudfront.net/testeando-vuejs/s_hero2x?1620574568" alt="Libro de Vue JS" class="item_book"><p class="item_nombre">Testeando componentes <br> de Vue.js con Jest</p></li>
+                    <li class="list_one__item item_two"><img src="https://m.media-amazon.com/images/I/51ZO9JM1aFL.jpg" alt="Libro de Angular" class="item_book"><p class="item_nombre">Desarrollo web ágil con <br> Angular.js</p></li>
+                </ul>
+            </div>
+        </div>
+        <div class="gallery_one">
+            <p class="gallery_one__line">____</p>
+            <h3 class="gallery_one__caption caption__white">Más descargados del Mes</h3>
+            <h2 class="gallery_one__title title__white">¡CURSOS DE PROGRAMACIÓN!</h2>
+            <p class="gallery_one__line line__two">____</p>
+            <div class="gallery_one__div">
+                <ul class="gallery_one__list">
+                    <li class="list_one__item"><img src="https://www.ediciones-eni.com/libro/java-11-los-fundamentos-del-lenguaje-java-con-ejercicios-practicos-corregidos-9782409027406_XL.jpg" alt="Libro de HTML" class="item_book"><p class="item_nombre">Java 11</p></li>
+                    <li class="list_one__item"><img src="https://m.media-amazon.com/images/I/51uExFPDh6L.jpg" alt="Libro de CSS" class="item_book"><p class="item_nombre">Python para principiantes</p></li>
+                    <li class="list_one__item"><img src="https://images.cdn1.buscalibre.com/fit-in/360x360/99/5f/995f6c02ae321d978ac3197b4697835d.jpg" alt="Libro de JavaScript" class="item_book"><p class="item_nombre">PHP</p></li>
+                    <li class="list_one__item"><img src="https://images.cdn2.buscalibre.com/fit-in/360x360/4f/74/4f74fa76ce1703384cf9f6694a308d01.jpg" alt="Libro de React" class="item_book"><p class="item_nombre">Node.js</p></li>
+                    <li class="list_one__item"><img src="https://www.ingebook.com/ib/pimg/Ingebook/00100_0000005167_4224.jpg" alt="Libro de Vue JS" class="item_book"><p class="item_nombre">Estructura de datos en C++</p></li>
+                    <li class="list_one__item"><img src="https://3.bp.blogspot.com/-Q7KtR3Lgvmg/W0wdkCZJ-4I/AAAAAAAAFkY/QvNiZ0Itsn0sJWCz7Hu31ITKqV7bpgpNgCLcBGAs/s1600/como-programar-en-c-sharp-2da-edicion-harvey-m-deitel-lv-fl.jpg" alt="Libro de Angular" class="item_book"><p class="item_nombre">Cómo programar | C#</p></li>
+                </ul>
+            </div>
+            <div class="gallery__foot">
+                <p class="gallery_one__line line__three line__four line__five">____</p>
+                <h3 class="foot__title">NO HAY NADA MEJOR <br>QUE SEGUIR <br>¡APRENDIENDO!</h3>
+                <button class="foot__button">Lea nuestra historia</button>
+                <p class="gallery_one__line line__three line__four">____</p>
+            </div>
+        </div>
+    </div>
+</section>
 
-<div class="row" hidden>
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+<aside class="aside">
+    <h3 class="gallery_one__caption">Proximamente</h3>
+    <h2 class="gallery_one__title">NUEVO LIBRO EN LA PÁGINA</h2>
+    <div class="aside__container">
+        <div class="aside__contact">
+            <h2 class="contact__title aside__color">Presentamos ASP:NET</h2>
+            <h3 class="contact__caption aside__color">By Alexander Gomez</h3>
+            <h3 class="contact__schedule aside__color">¿Cuándo?<br>__<br><br>Jul 12, 2022, 7:00 PM </h3>
+            <h3 class="contact__schedule__two aside__color">¿Dónde?<br>__<br><br>500 Terry A Francois Blvd,<br>500 Terry A Francois Blvd, San Francisco, CA 94158, USA</h3>
+            <button class="contact__button aside__color">Más información</button>
+        </div>
+        <div class="aside__img">
+            <img src="https://olcovers2.blob.core.windows.net/coverswp/2011/08/asp_net_Guia_Desarrollo_OpenLibra.gif" alt="Imagen de Libro de ASP.NET" class="img">
+        </div>
     </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-    </div>
-</div>
+</aside>
